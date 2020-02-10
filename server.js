@@ -26,6 +26,6 @@ db.once("open",()=>console.log("CONECTADO AO MONGOOSE"))
 
 app.use("/", indexRouter)
 app.use("/authors", authorRouter)
-//app.use("/books", bookRouter)
+app.use("/books", bookRouter)
 
 app.listen(process.env.PORT || 3000)
