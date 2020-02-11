@@ -7,8 +7,9 @@ router.get("/",async (req,res)=>{
     let books
     try{
         books=Book.find().sort({createdAt:'desc'}).limit(10).exec()
-    }catch{
+    }catch(err){
         books=[]
+        console.info("Erro ao montar a lista recente:",err)
     }
     res.render("index",{books:books})
 })
